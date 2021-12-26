@@ -5,15 +5,17 @@ for i in range(n + 1):
     ratios.append(int(input(alf[i] + '=')))
 
 mbq = []
-for i in range(1, ratios[0] + 1):
-    if ratios[0] % i == 0:
+for i in range(1, abs(ratios[0]) + 1):
+    if abs(ratios[0]) % i == 0:
         mbq.append(i)
+        mbq.append(-i)
 print('q:', mbq)
 
 mbp = []
-for i in range(1, ratios[-1] + 1):
-    if ratios[0] % i == 0:
+for i in range(1, abs(ratios[-1]) + 1):
+    if abs(ratios[-1]) % i == 0:
         mbp.append(i)
+        mbp.append(-i)
 print('p:', mbp)
 
 checked = []
