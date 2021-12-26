@@ -16,13 +16,15 @@ for i in range(1, ratios[-1] + 1):
         mbp.append(i)
 print('p:', mbp)
 
-res = []
+checked = []
 for p in mbp:
     for q in mbq:
         x = p / q
+        if checked.count(x) != 0:
+            continue
         sm = 0
         for i in range(n + 1):
             sm += ratios[i] * pow(x, (n - i))
-        if sm == 0 and res.count(x) == 0:
+        if sm == 0:
             print(p, '/', q)
-            res.append(x)
+        checked.append(x)
